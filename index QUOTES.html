@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quote Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-800 font-sans">
+    <div class="flex flex-col items-center justify-center min-h-screen p-4">
+      <h1 class="text-3xl font-bold mb-6">Random Quote Generator</h1>
+
+      <div class="flex gap-4 mb-4">
+        <button id="get-quote-button" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+          Get Quote
+        </button>
+        <button id="save-favorite-button" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+          Save
+        </button>
+        <button id="download-image-button" class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded">
+          Download
+        </button>
+      </div>
+
+      <div id="loader" class="mb-4 hidden text-blue-500">Loading...</div>
+      <p id="error-message" class="mb-4 hidden text-red-500">
+        Oops! Could not load quote.
+      </p>
+
+      <!-- Quote Card -->
+      <div id="quote-card" class="p-6 bg-white rounded shadow max-w-md w-full text-center hidden">
+        <p id="quote-text" class="text-xl font-semibold mb-2"></p>
+        <p id="quote-author" class="text-gray-600"></p>
+      </div>
+
+      <!-- Favorites -->
+      <div class="mt-8 w-full max-w-md">
+        <h2 class="text-lg font-bold mb-2">Favorites</h2>
+        <ul id="favorites-list" class="space-y-4"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
